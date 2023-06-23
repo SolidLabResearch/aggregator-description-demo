@@ -174,9 +174,30 @@ Open a new instance of the terminal.
 
 ### Service Description of the Solid Stream Aggregator
 
+Now that the aggregator has aggregated the data, the events are being written as LDP resources into the aggregation pod.
 
+The aggregation events can be then queried by the client. We also wish to know how the aggregation event was generated. 
 
+Since, an aggregation event is in an LDP resource inside an LDP container. We describe the aggregation function by using the Function Ontology in the LDP container's metadata file. 
 
+1. Search for an LDP resource in which you are interested to get the metadata from and copy it's URL.
+
+2. Use the following command to get the metadata of the aggregation function which generated the aggregation event.
+
+```bash
+node dist/scripts/metadata_container.js get-metadata -r <URL of the LDP resource>
+```
+You will see the quads, describing the aggregation function in your console.
+
+We are also interested to see the original events which were used to generate the aggregation event. By able to retrieve the original events, we can verify the aggregation function, as well as the aggregation event. This creates a provenance chain of the aggregation event.
+
+3. Use the following command to get the metadata of the original events from the participant's pod which were used to generate the aggregation event.
+
+```bash
+node dist/scripts/original_events.js trace -r <URL of the LDP resource>
+```
+
+Now you will see the original events which were used to generate the aggregation event in the console.
 
 ## License
 
