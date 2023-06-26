@@ -188,7 +188,16 @@ Since an aggregation event is in an LDP resource inside an LDP container. We des
 node dist/scripts/metadata_container.js get-metadata -r <URL of the LDP resource>
 ```
 
-You will see the quads, describing the aggregation function in your console.
+You will see the triples describing the aggregation function in your console, as shown below (an example).
+
+```
+[...]
+<http://example.org/aggregation_function_execution> <http://w3id.org/rsp/vocals-sd#registeredStreams> <http://localhost:3000/dataset_participant1/data/> .
+<http://example.org/aggregation_function_execution> <http://example.org/aggregation_start_time> "2022-11-07T09:27:17.5890" .
+<http://example.org/aggregation_function_execution> <http://example.org/aggregation_end_time> "2024-11-07T09:27:17.5890" .
+<http://example.org/aggregation_function_execution> <http://example.org/last_execution_time> 1687439752719 .
+[...]
+```
 
 We are also interested to see the original events which were used to generate the aggregation event. By being able to retrieve the original events, we can verify the aggregation function, as well as the aggregation event. This creates a provenance chain of the aggregation event.
 
@@ -198,7 +207,16 @@ We are also interested to see the original events which were used to generate th
 node dist/scripts/original_events.js trace -r <URL of the LDP resource>
 ```
 
-Now you will see the original events which were used to generate the aggregation event in the console.
+Now you will see the original events which were used to generate the aggregation event in the console, as shown below (an example, you will see different events based on your LDP resource).
+
+```
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs982
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1482
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1982
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs983
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1483
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1983
+```
 
 ## License
 
