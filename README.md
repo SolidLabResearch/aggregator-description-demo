@@ -1,6 +1,6 @@
 # Service Description of the Aggregator.
 
-The repository is used to demonstrate the description of the aggregator service. The service is described using the [Function Ontology](https://fno.io/spec/). The description in then used to trace back the original events employed to generate the aggregation event.
+The repository is used to demonstrate the description of the aggregator service. The service is described using the [Function Ontology](https://fno.io/spec/). The description is then used to trace back the original events employed to generate the aggregation event.
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ npm run start-solid-server
 ```
 
 This will generate the Solid pod for the patients at http://localhost:3000/.
-For example, the Solid pod for the patient 1 will be at http://localhost:3000/dataset_participant1/.
+For example, the Solid pod for patient 1 will be at http://localhost:3000/dataset_participant1/.
 
 The `/data/` folder will contain the dataset for the patients after we load it up in the next step.
 
@@ -100,7 +100,7 @@ in [this repository](https://github.com/argahsuknesib/dahcc-heartrate).
 
    ```shell
    `src/algorithms/Naive.ts:66:51 - error TS2345: Argument of type 'import("C:/temp/CLEAN3/ldes-in-solid-semantic-observations-replay/engine/node_modules/@inrupt/solid-client-authn-node/dist/Session").Session' is not assignable to parameter of type 'import("C:/temp/CLEAN3/ldes-in-solid-semantic-observations-replay/engine/node_modules/@treecg/versionawareldesinldp/node_modules/@inrupt/solid-client-authn-node/dist/Session").Session'.
-    Types have separate declarations of a private property 'clientAuthentication'.
+    Types have separate declarations of private property 'clientAuthentication'.
 
    66     const comm = session ? new SolidCommunication(session) : new LDPCommunication();
    ```
@@ -109,19 +109,19 @@ in [this repository](https://github.com/argahsuknesib/dahcc-heartrate).
    This is due to conflicting dependencies and
    should be resolved once the `versionawareldesinldp` package has been refactored.
 
-### Starting the webapp to load
+### Starting the web app to load
 
-The webapp is a simple vue app that allows you to load the data into the Solid pods.
+The web app is a simple Vue app that allows you to load the data into the Solid pods.
 
-1. To start the webapp, run the following command from the root of the repository.
+1. To start the web app, run the following command from the root of the repository.
 
    ```bash
    cd webapp && npm install && npm run dev
    ```
 
-2. Open the webapp, select a dataset to be loaded. Click on the `Load selected dataset` button.
+2. Open the web app, and select a dataset to be loaded. Click on the `Load selected dataset` button.
 
-3. Click on `Get Observation Subjects` button to get the observation subjects from the dataset.
+3. Click on the `Get Observation Subjects` button to get the observation subjects from the dataset.
 
 4. Click on the `Sort observation subjects` button.
 5. Click on the `submit next observation` button 3 times, till you see the replayer count as 3.
@@ -146,7 +146,7 @@ Open a new instance of the terminal.
    npm run start aggregation
    ```
 
-3. The solid stream aggregator will expose a HTTP server at http://localhost:8080/
+3. The solid stream aggregator will expose an HTTP server at http://localhost:8080/
    The aggregator server will expose API endpoints, such as '/averageHRPatient1' which registers the following query:
 
    ```sparql
@@ -164,32 +164,33 @@ Open a new instance of the terminal.
 
 4. Once the aggregator is running, open a new instance of the terminal and run the following command to do a request to the API endpoint.
 
-    ```bash
-    curl http://localhost:8080/averageHRPatient1
-    ```
+   ```bash
+   curl http://localhost:8080/averageHRPatient1
+   ```
 
-    The aggregation events will be written to the aggregation pod, in LDP containers based upon the bucket size (present in the './src/config/ldes_properties.json' file). The bucket size is set to a default of 200. The bucket size can be changed if required.
+   The aggregation events will be written to the aggregation pod, in LDP containers based on the bucket size (present in the './src/config/ldes_properties.json' file). The bucket size is set to a default of 200. The bucket size can be changed if required.
 
-    The aggregation events are being written into the LDES in LDP present at http://localhost:3000/aggregation_pod/aggregation into multiple LDP containers.
+   The aggregation events are being written into the LDES in LDP present at http://localhost:3000/aggregation_pod/aggregation into multiple LDP containers.
 
 ### Service Description of the Solid Stream Aggregator
 
 Now that the aggregator has aggregated the data, the events are being written as LDP resources into the aggregation pod.
 
-The aggregation events can be then queried by the client. We also wish to know how the aggregation event was generated. 
+The aggregation events can be then queried by the client. We also wish to know how the aggregation event was generated.
 
-Since, an aggregation event is in an LDP resource inside an LDP container. We describe the aggregation function by using the Function Ontology in the LDP container's metadata file. 
+Since an aggregation event is in an LDP resource inside an LDP container. We describe the aggregation function by using the Function Ontology in the LDP container's metadata file.
 
-1. Search for an LDP resource in which you are interested to get the metadata from and copy it's URL.
+1. Search for an LDP resource in which you are interested to get the metadata and copy its URL.
 
 2. Use the following command to get the metadata of the aggregation function which generated the aggregation event.
 
 ```bash
 node dist/scripts/metadata_container.js get-metadata -r <URL of the LDP resource>
 ```
+
 You will see the quads, describing the aggregation function in your console.
 
-We are also interested to see the original events which were used to generate the aggregation event. By able to retrieve the original events, we can verify the aggregation function, as well as the aggregation event. This creates a provenance chain of the aggregation event.
+We are also interested to see the original events which were used to generate the aggregation event. By being able to retrieve the original events, we can verify the aggregation function, as well as the aggregation event. This creates a provenance chain of the aggregation event.
 
 3. Use the following command to get the metadata of the original events from the participant's pod which were used to generate the aggregation event.
 
