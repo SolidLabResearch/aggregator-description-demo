@@ -218,6 +218,17 @@ https://dahcc.idlab.ugent.be/Protego/_participant1/obs1483
 https://dahcc.idlab.ugent.be/Protego/_participant1/obs1983
 ```
 
+### Conclusion
+
+The description of the aggregator events enables the query agent to retrieve the relevant aggregated relevant data from the solid pod. In the future, work will be done towards a network of query agents where the metadata can be used across different solid pods to check if there is already an aggregation that can be re-used to answer a query. Thus, it will reduce the load on the aggregator and enable the aggregator's scalability.
+
+
+### Lessons Learned
+
+The aggregator involves writing the aggregation events to the pod in a fast-moving fashion. This has led to an issue with the LDES in LDP specification as the library does a patch delete and patch insert to update the most recent LDP container in the `ldp:inbox` predicate. 
+However, since the speed of aggregation event generation and writing to the pod is very fast, the patch delete and patch insert operations are not able to keep up with the speed of the aggregation event generation. This leads to the LDP container in the `ldp:inbox` predicate being not deleted but appended. Thus, you end up with multiple LDP containers as an inbox which violates the LDES in LDP specification. The issue is documented in the repository of VersionAwareLDESinLDP [here](https://github.com/woutslabbinck/VersionAwareLDESinLDP/issues/31).
+ 
+
 ## License
 
 This code is copyrighted by [Ghent University - imec](https://www.ugent.be/ea/idlab/en) and released under the [MIT Licence](./LICENCE)
