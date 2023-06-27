@@ -168,7 +168,7 @@ Open a new instance of the terminal.
    curl http://localhost:8080/averageHRPatient1
    ```
 
-   The aggregation events will be written to the aggregation pod, in LDP containers based on the bucket size (present in the './src/config/ldes_properties.json' file). The bucket size is set to a default of 200. The bucket size can be changed if required.
+   The aggregation events will be written to the aggregation pod, in LDP containers based on the bucket size (present in the './src/config/ldes_properties.json' file). The bucket size is set to a default of 1000. The bucket size can be changed if required.
 
    The aggregation events are being written into the LDES in LDP present at http://localhost:3000/aggregation_pod/aggregation/ into LDP containers.
 
