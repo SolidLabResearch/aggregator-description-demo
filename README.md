@@ -55,7 +55,7 @@ Since an aggregation event is in an LDP resource inside an LDP container. We des
 node dist/scripts/metadata_container.js get-metadata -r http://localhost:3000/aggregation_pod/aggregation/1690380109955/08efbb85-c262-40a1-bfd9-2f4991049863
 ```
 
-You will see the triples describing the aggregation function in your console, as shown below (an example).
+You will see the triples describing the aggregation function in your console, as shown below.
 
 ```
 [...]
@@ -74,15 +74,15 @@ We are also interested to see the original events which were used to generate th
 node dist/scripts/original_events.js trace -r http://localhost:3000/aggregation_pod/aggregation/1690380109955/08efbb85-c262-40a1-bfd9-2f4991049863
 ```
 
-Now you will see the original events which were used to generate the aggregation event in the console, as shown below (an example, you will see different events based on your LDP resource).
+Now you will see the original events which were used to generate the aggregation event in the console, as shown below
 
 ```
-https://dahcc.idlab.ugent.be/Protego/_participant1/obs982
-https://dahcc.idlab.ugent.be/Protego/_participant1/obs1482
-https://dahcc.idlab.ugent.be/Protego/_participant1/obs1982
-https://dahcc.idlab.ugent.be/Protego/_participant1/obs983
-https://dahcc.idlab.ugent.be/Protego/_participant1/obs1483
-https://dahcc.idlab.ugent.be/Protego/_participant1/obs1983
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs988
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1487
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs987
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1988
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1488
+https://dahcc.idlab.ugent.be/Protego/_participant1/obs1987
 ```
 
 ### Conclusion
