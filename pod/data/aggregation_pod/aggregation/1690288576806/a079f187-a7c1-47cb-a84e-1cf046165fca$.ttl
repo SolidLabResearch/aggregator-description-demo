@@ -1,0 +1,8 @@
+<https://rsp.js/aggregation_event/163b4750-ace7-4ed6-8a31-bc9a0cb98145> a <https://saref.etsi.org/core/Measurement>;
+    <https://saref.etsi.org/core/hasTimestamp> "2023-07-25T12:36:16.797Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <https://saref.etsi.org/core/hasValue> "0.224788175"^^<http://www.w3.org/2001/XMLSchema#float>;
+    <http://www.w3.org/ns/prov#wasDerivedFrom> <https://argahsuknesib.github.io/asdo/AggregatorService>;
+    <http://www.w3.org/ns/prov#generatedBy> <http://localhost:3000/dataset_participant1/data/>;
+    <http://w3id.org/rsp/vocals-sd#startedAt> "2023-02-13T08:27:28.960Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://w3id.org/rsp/vocals-sd#endedAt> "2023-02-13T08:27:29.020Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <http://purl.org/dc/terms/source> <http://localhost:3000/aggregation_pod/aggregation/1690288576806/a079f187-a7c1-47cb-a84e-1cf046165fca>.

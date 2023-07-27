@@ -1,0 +1,27 @@
+<http://localhost:3000/dataset_participant1/data/> a <https://w3id.org/tree#Node>;
+    <https://w3id.org/tree#relation> _:b9662_b9655_b9626_b9623_b9619_e_b031340, _:b9662_b9655_e_b031350, _:e_b031360;
+    <https://w3id.org/tree#viewDescription> <http://localhost:3000/dataset_participant1/data/#ViewDescription>;
+    <http://www.w3.org/ns/ldp#inbox> <http://localhost:3000/dataset_participant1/data/1690381500480/>.
+_:b9662_b9655_b9626_b9623_b9619_e_b031340 a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
+    <https://w3id.org/tree#path> <https://saref.etsi.org/core/hasTimestamp>;
+    <https://w3id.org/tree#value> "2023-07-26T14:25:00.480Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <https://w3id.org/tree#node> <http://localhost:3000/dataset_participant1/data/1690381500480/>.
+_:b9662_b9655_e_b031350 a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
+    <https://w3id.org/tree#path> <https://saref.etsi.org/core/hasTimestamp>;
+    <https://w3id.org/tree#value> "2023-02-13T08:27:26.171Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <https://w3id.org/tree#node> <http://localhost:3000/dataset_participant1/data/1676276846171/>.
+_:e_b031360 a <https://w3id.org/tree#GreaterThanOrEqualToRelation>;
+    <https://w3id.org/tree#path> <https://saref.etsi.org/core/hasTimestamp>;
+    <https://w3id.org/tree#value> "2023-02-13T08:27:32.421Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    <https://w3id.org/tree#node> <http://localhost:3000/dataset_participant1/data/1676276852421/>.
+<http://localhost:3000/dataset_participant1/data/#ViewDescription> a <https://w3id.org/tree#ViewDescription>;
+    <http://www.w3.org/ns/dcat#servesDataset> <http://localhost:3000/dataset_participant1/data/#EventStream>;
+    <http://www.w3.org/ns/dcat#endpointURL> <http://localhost:3000/dataset_participant1/data/>;
+    <https://w3id.org/ldes#managedBy> <http://localhost:3000/dataset_participant1/data/#LDESinLDPClient>.
+<http://localhost:3000/dataset_participant1/data/#EventStream> a <https://w3id.org/ldes#EventStream>;
+    <https://w3id.org/tree#view> <http://localhost:3000/dataset_participant1/data/>.
+<http://localhost:3000/dataset_participant1/data/#LDESinLDPClient> a <https://w3id.org/ldes#LDESinLDPClient>;
+    <https://w3id.org/ldes#bucketizeStrategy> <http://localhost:3000/dataset_participant1/data/#BucketizeStrategy>.
+<http://localhost:3000/dataset_participant1/data/#BucketizeStrategy> a <https://w3id.org/ldes#BucketizeStrategy>;
+    <https://w3id.org/tree#path> <https://saref.etsi.org/core/hasTimestamp>;
+    <https://w3id.org/ldes#bucketType> <https://w3id.org/ldes#timestampFragmentation>.

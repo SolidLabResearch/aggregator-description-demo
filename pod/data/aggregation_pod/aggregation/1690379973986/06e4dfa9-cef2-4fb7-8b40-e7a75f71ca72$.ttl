@@ -1,0 +1,7 @@
+<https://rsp.js/aggregation_event/19a912d6-9cd5-4ad3-820a-14586a1bb745> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Measurement> .
+<https://rsp.js/aggregation_event/19a912d6-9cd5-4ad3-820a-14586a1bb745> <https://saref.etsi.org/core/hasTimestamp> "2023-07-26T13:59:33.511Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://rsp.js/aggregation_event/19a912d6-9cd5-4ad3-820a-14586a1bb745> <https://saref.etsi.org/core/hasValue> "0"^^<http://www.w3.org/2001/XMLSchema#float> .
+<https://rsp.js/aggregation_event/19a912d6-9cd5-4ad3-820a-14586a1bb745> <http://www.w3.org/ns/prov#wasDerivedFrom> <https://argahsuknesib.github.io/asdo/AggregatorService> .
+<https://rsp.js/aggregation_event/19a912d6-9cd5-4ad3-820a-14586a1bb745> <http://www.w3.org/ns/prov#generatedBy> <http://localhost:3000/dataset_participant1/data/> .
+<https://rsp.js/aggregation_event/19a912d6-9cd5-4ad3-820a-14586a1bb745> <http://w3id.org/rsp/vocals-sd#startedAt> "2023-02-13T08:27:35.720Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://rsp.js/aggregation_event/19a912d6-9cd5-4ad3-820a-14586a1bb745> <http://w3id.org/rsp/vocals-sd#endedAt> "2023-02-13T08:27:35.780Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .

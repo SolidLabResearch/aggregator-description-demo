@@ -1,0 +1,25 @@
+<http://example.org/aggregation_function_execution> a <https://w3id.org/function/ontology#Execution>;
+    <https://w3id.org/function/ontology#executes> <http://example.org/aggregation_function>;
+    <http://w3id.org/rsp/vocals-sd#registeredStreams> <http://localhost:3000/dataset_participant1/data/>;
+    <http://example.org/aggregation_start_time> "2022-11-07T09:27:17.5890";
+    <http://example.org/aggregation_end_time> "2024-11-07T09:27:17.5890";
+    <http://example.org/last_execution_time> 1690380110094;
+    <http://example.org/aggregation_query> <http://example.org/aggregation_query/56faaf75-89ac-48de-bfd9-b42cb25bff93>.
+<http://example.org/aggregation_function> a <https://w3id.org/function/ontology#Function>;
+    <https://w3id.org/function/ontology#name> <http://localhost:3000/aggregation_pod/aggregation/1690380109955/aggregation_function>;
+    <http://purl.org/dc/terms/description> "A function that executes an aggregation function on a RDF stream of data"@en;
+    <http://w3id.org/function/ontology#solves> <http://example.org/continuous_monitoring_with_solid>;
+    <http://w3id.org/function/ontology#expects> <http://argahsuknesib.github.io/asdo/parameters/solid_pod_url>, <http://argahsuknesib.github.io/asdo/parameters/aggregation_query>, <http://argahsuknesib.github.io/asdo/parameters/latest_minutes_to_monitor>;
+    <http://w3id.org/function/ontology#returns> <http://example.org/aggregation_result_stream>;
+    <http://w3id.org/function/ontology#implements> <http://example.org/solid_stream_aggregation_function>.
+<http://example.org/aggregation_query/56faaf75-89ac-48de-bfd9-b42cb25bff93> a <http://w3id.org/function/ontology#Query>;
+    <http://www.example.org/has_query_string> "\n        PREFIX saref: <https://saref.etsi.org/core/> \n        PREFIX dahccsensors: <https://dahcc.idlab.ugent.be/Homelab/SensorsAndActuators/>\n        PREFIX : <https://rsp.js/>\n        REGISTER RStream <output> AS\n        SELECT (AVG(?o) AS ?averageHR1)\n        FROM NAMED WINDOW :w1 ON STREAM <http://localhost:3000/dataset_participant1/data/> [RANGE 60 STEP 20]\n        WHERE{\n            WINDOW :w1 { ?s saref:hasValue ?o .\n                         ?s saref:relatesToProperty dahccsensors:wearable.bvp .}\n        }\n        ";
+    <http://www.example.org/has_projection_variable> "averageHR1";
+    <http://www.example.org/has_window_name> <https://rsp.js/w1>;
+    <http://www.example.org/has_window_size> 60;
+    <http://www.example.org/has_window_slide> 20;
+    <http://www.example.org/has_focus> <https://dahcc.idlab.ugent.be/Homelab/SensorsAndActuators/wearable.bvp>.
+<http://example.org/continuous_monitoring_with_solid> a <http://w3id.org/function/ontology#Problem>.
+<http://argahsuknesib.github.io/asdo/parameters/aggregation_query> a <http://w3id.org/function/ontology#Parameter>.
+<http://example.org/aggregation_result_stream> a <http://w3id.org/function/ontology#OutputStream>, <http://purl.oclc.org/NET/UNIS/sao/sao#StreamData>;
+    <http://purl.org/dc/terms/description> "The stream of generated aggregation data that is the result of the aggregation function"@en.
