@@ -7,9 +7,10 @@ The repository is used to demonstrate the description of the aggregator service.
 1.  Clone the repository and install the dependencies using the following commands:
 
     ```
-    git clone https://github.com/argahsuknesib/ssa-service-description-demo.git
-    cd ssa-service-description-demo
+    git clone https://github.com/SolidLabResearch/aggregator-description-demo.git
+    cd aggregator-description-demo
     npm install
+    npm run build
     ```
 
 2.  Install the Community Solid Server. NOTE: Install the Community Solid Server globally instead of locally. Installing the Community Solid Server will cause component.js issues in the node_modules folder.
