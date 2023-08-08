@@ -4,19 +4,13 @@ The repository is used to demonstrate the description of the aggregator service.
 
 ### Prerequisites
 
-1.  Clone the repository and install the dependencies using the following commands:
+-  Clone the repository and install the dependencies using the following commands:
 
     ```
     git clone https://github.com/SolidLabResearch/aggregator-description-demo.git
     cd aggregator-description-demo
     npm install
     npm run build
-    ```
-
-2.  Install the Community Solid Server. NOTE: Install the Community Solid Server globally instead of locally. Installing the Community Solid Server will cause component.js issues in the node_modules folder.
-
-    ```
-    npm install -g @solid/community-server
     ```
 
 ## Setup
@@ -87,7 +81,7 @@ https://dahcc.idlab.ugent.be/Protego/_participant1/obs1987
 
 ### Conclusion
 
-The description of the aggregator events enables the query agent to retrieve the relevant aggregated relevant data from the solid pod. In the future, work will be done towards a network of query agents where the metadata can be used across different solid pods to check if there is already an aggregation that can be re-used to answer a query. Thus, it will reduce the load on the aggregator and enable the aggregator's scalability.
+The description of the aggregator events enables the query agent to retrieve the relevant aggregated relevant data from the Solid pod. In the future, work will be done towards a network of query agents where the metadata can be used across different Solid pods to check if there is already an aggregation that can be re-used to answer a query. Thus, it will reduce the load on the aggregator and enable the aggregator's scalability.
 
 ### Lessons Learned
 
